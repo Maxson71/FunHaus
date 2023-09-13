@@ -1,74 +1,85 @@
-//var text = document.getElementById("text");
-
 function toggleClass(element, className) {
     if (!element || !className) {
         return;
     }
 
     var classString = element.className;
-    var nameIndex = classString.indexOf(className);
 
+    if (classString) {
+        var nameIndex = classString.indexOf(className);
 
-    if (nameIndex === -1) {
-        classString += ' ' + className;
+        if (nameIndex === -1) {
+            classString += ' ' + className;
+        } else {
+            classString = classString.substr(0, nameIndex - 1) + classString.substr(nameIndex + className.length);
+        }
+
+        element.className = classString;
     } else {
-        classString = classString.substr(0, nameIndex - 1) + classString.substr(nameIndex + className.length);
+        element.className = className;
     }
-    element.className = classString;
+}
+
+function closeAllQuestions() {
+    var openQuestions = document.getElementsByClassName("open-questions");
+
+    while (openQuestions.length > 0) {
+        toggleClass(openQuestions[0], "open-questions");
+    }
+
+    var openParagraphQuestions = document.getElementsByClassName("open-paragraph-questions");
+
+    while (openParagraphQuestions.length > 0) {
+        toggleClass(openParagraphQuestions[0], "open-paragraph-questions");
+    }
 }
 
 document.getElementById('btn-menu-responsive').addEventListener('click', function () {
     toggleClass(this, 'close');
-    //text.innerHTML == "Close" ? text.innerHTML = "Menu" : text.innerHTML = "Close";
 });
 
-var open_question = 0;
+document.getElementById('what-questions').addEventListener('click', function () {
+    // Перевірка, чи елемент вже має клас "open-questions"
+    var isOpen = this.classList.contains("open-questions");
 
-function closeQuestions() {
-    if (open_question === 1) {
-        toggleClass(document.getElementById('what-questions'), 'open-questions');
+    closeAllQuestions();
+
+    // Якщо відкрито, то не відкриваємо знову
+    if (!isOpen) {
+        toggleClass(this, 'open-questions');
         toggleClass(document.getElementById('what-paragraph'), 'open-paragraph-questions');
-    } else if (open_question === 2) {
-        toggleClass(document.getElementById('how-questions'), 'open-questions');
+    }
+});
+
+document.getElementById('how-questions').addEventListener('click', function () {
+    var isOpen = this.classList.contains("open-questions");
+
+    closeAllQuestions();
+
+    if (!isOpen) {
+        toggleClass(this, 'open-questions');
         toggleClass(document.getElementById('how-paragraph'), 'open-paragraph-questions');
-    } else if (open_question === 3) {
-        toggleClass(document.getElementById('where-questions'), 'open-questions');
+    }
+});
+
+document.getElementById('where-questions').addEventListener('click', function () {
+    var isOpen = this.classList.contains("open-questions");
+
+    closeAllQuestions();
+
+    if (!isOpen) {
+        toggleClass(this, 'open-questions');
         toggleClass(document.getElementById('where-paragraph'), 'open-paragraph-questions');
-    } else if (open_question === 4) {
-        toggleClass(document.getElementById('when-questions'), 'open-questions');
+    }
+});
+
+document.getElementById('when-questions').addEventListener('click', function () {
+    var isOpen = this.classList.contains("open-questions");
+
+    closeAllQuestions();
+
+    if (!isOpen) {
+        toggleClass(this, 'open-questions');
         toggleClass(document.getElementById('when-paragraph'), 'open-paragraph-questions');
     }
-}
-
-document.getElementById('what-questions-div').addEventListener('click', function () {
-    if (open_question !== 1) {
-        closeQuestions()
-    }
-    toggleClass(document.getElementById('what-questions'), 'open-questions');
-    toggleClass(document.getElementById('what-paragraph'), 'open-paragraph-questions');
-    open_question = 1;
-});
-document.getElementById('how-questions-div').addEventListener('click', function () {
-    if (open_question !== 2) {
-        closeQuestions()
-    }
-    toggleClass(document.getElementById('how-questions'), 'open-questions');
-    toggleClass(document.getElementById('how-paragraph'), 'open-paragraph-questions');
-    open_question = 2;
-});
-document.getElementById('where-questions-div').addEventListener('click', function () {
-    if (open_question !== 3) {
-        closeQuestions()
-    }
-    toggleClass(document.getElementById('where-questions'), 'open-questions');
-    toggleClass(document.getElementById('where-paragraph'), 'open-paragraph-questions');
-    open_question = 3;
-});
-document.getElementById('when-questions-div').addEventListener('click', function () {
-    if (open_question !== 4) {
-        closeQuestions()
-    }
-    toggleClass(document.getElementById('when-questions'), 'open-questions');
-    toggleClass(document.getElementById('when-paragraph'), 'open-paragraph-questions');
-    open_question = 4;
 });
