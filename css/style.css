@@ -1,0 +1,332 @@
+@import url("reset.css");
+
+/*==================================================================*/
+
+body {
+    background: #8C433A;
+    color: #FDF4B8;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    position: relative
+}
+
+.border {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10.5%;
+}
+
+h1, h2 {
+    font-family: Playfair Display, serif;
+}
+
+h1 {
+    font-size: 102px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+.p1, .p2, .p3 {
+    font-family: DM Sans, sans-serif;
+    line-height: 1.5;
+}
+
+.p1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.p2 {
+    font-size: 24px;
+}
+
+.p3 {
+    font-size: 16px;
+    color: #8C433A;
+}
+
+/*==================================================================*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #8C433A;
+    z-index: 100
+}
+
+.header-border {
+    display: flex;
+    min-height: 147px;
+    margin: 0 auto;
+    padding: 5px 35px;
+    align-items: center;
+}
+
+.logo {
+    color: #FDF4B8;
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 98.7%;
+    width: 120px;
+    transition: color .2s;
+
+    & span {
+        display: inline-block;
+        color: #8C433A;
+        -webkit-text-stroke: 1px #FDF4B8;
+        transition: all .2s;
+    }
+}
+
+.logo:hover {
+    color: #fff9dc;
+
+    & span {
+        color: #8C433A;
+        -webkit-text-stroke: 1px #fff9dc;
+        transform: translateX(2px);
+    }
+}
+
+/*==================================================================*/
+
+.menu {
+    min-height: 147px;
+    flex: 1 1 auto;
+    display: flex;
+    position: relative;
+    justify-content: end;
+    align-items: center;
+}
+
+.btn-menu {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    margin: auto;
+}
+
+.btn-menu span {
+    rotate: -45deg;
+    width: 35px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: #FDF4B8;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Opera, Chrome, and Safari */
+
+}
+
+.btn-menu span:before {
+    width: 25px;
+    position: absolute;
+    top: -12px;
+    left: -3px;
+    content: ' ';
+    background-color: #FDF4B8;
+}
+
+.btn-menu span:after {
+    width: 35px;
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    content: ' ';
+    background-color: #FDF4B8;
+}
+
+.close span {
+    position: absolute;
+    background: #FDF4B8;
+}
+
+.close span:after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #FDF4B8;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.close span:before {
+    position: absolute;
+    left: 120px;
+    background: none;
+}
+
+.btn-menu span, .btn-menu span:before, .btn-menu span:after, .close span, .close span:before, .close span:after {
+    height: 4px;
+    border-radius: 2px;
+    -moz-transition: all .5s cubic-bezier(0.5, -0.6, 0.19, 1);
+    -o-transition: all .5s cubic-bezier(0.5, -0.6, 0.19, 1);
+    -webkit-transition: all .5s cubic-bezier(0.5, -0.6, 0.19, 1);
+    transition: all .5s cubic-bezier(0.5, -0.6, 0.19, 1);
+}
+
+.btn-menu:hover {
+    & span {
+        background-color: #fff9dc;
+    }
+
+    & span:before {
+        background-color: #fff9dc;
+    }
+
+    & span:after {
+        background-color: #fff9dc;
+    }
+}
+
+/*==================================================================*/
+.main {
+    display: flex;
+}
+
+.main-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    max-height: 1080px;
+
+    & h1 {
+        max-width: 912px;
+    }
+}
+
+.sub-title {
+    display: flex;
+    justify-content: flex-end;
+
+    & h2 {
+        max-width: 850px;
+    }
+
+    padding-bottom: 2.5%;
+}
+
+.main-info {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 7.5%;
+
+    & div {
+        max-width: 620px;
+        justify-content: flex-start;
+
+        & p {
+            padding-top: 5.5%;
+        }
+    }
+}
+
+/*==================================================================*/
+.questions {
+    & div {
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+
+        cursor: pointer;
+        padding-left: 10%;
+        padding-bottom: 40px;
+        position: relative;
+
+    }
+
+    & div:hover {
+        color: #fff9dc;
+        transform: translateX(25px);
+    }
+
+    & span {
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+
+        background-color: #FDF4B8;
+        width: 20vw;
+        height: 2px;
+        left: -15vw;
+        top: 60px;
+        position: absolute;
+    }
+
+    & div:hover span {
+        background-color: #fff9dc;
+        transform: translateX(25px);
+    }
+}
+
+/*==================================================================*/
+
+.paragraph-questions {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.open-paragraph-questions {
+    max-height: 100%;
+    background-color: #FDF4B8;
+    padding: 0 20% 50px 28%;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    column-gap: 45px;
+}
+
+.open-questions {
+    background-color: #FDF4B8;
+    padding: 50px 15px 0 20%;
+
+    color: #8C433A;
+
+    & div:hover {
+        color: #8c4d47;
+    }
+
+    & div {
+        & span {
+            background-color: #8C433A;
+            width: 30vw;
+            left: -25vw;
+        }
+
+        & div {
+            display: flex;
+            justify-content: space-between;
+
+            & p {
+                flex: 0 1 50%;
+            }
+        }
+    }
+
+    & div:hover span {
+        background-color: #8c4d47;
+    }
+
+}
+
+.open-questions, .open-paragraph-questions, .paragraph-questions, .questions {
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
