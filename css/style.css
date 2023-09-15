@@ -55,7 +55,6 @@ h2 {
 /*==================================================================*/
 
 .header {
-    position: fixed;
     width: 100%;
     background-color: #8C433A;
     z-index: 100
@@ -75,7 +74,8 @@ h2 {
     font-size: 40px;
     font-weight: 700;
     line-height: 98.7%;
-    width: 120px;
+    width: 155px;
+    min-width: 155px;
     transition: color .2s;
 
     & span {
@@ -219,8 +219,9 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 82vh;
     max-height: 1080px;
+    padding-bottom: 157px;
 
     & h1 {
         max-width: 912px;
@@ -301,7 +302,8 @@ h2 {
     background-color: #8C433A;
 
     & p {
-        overflow: hidden;
+        max-height: 0;
+        visibility: hidden;
     }
 }
 
@@ -316,6 +318,7 @@ h2 {
 
     & p {
         max-height: 100%;
+        visibility: visible;
     }
 }
 
@@ -359,14 +362,87 @@ h2 {
     transition: all .5s ease;
 }
 
+
+/*==================================================================*/
+
 .footer {
     background-color: #FDF4B8;
     min-height: 690px;
 }
 
 .footer-border {
-    display: flex;
     min-height: 690px;
     margin: 0 auto;
     padding: 90px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_space {
+    flex: 1 1 auto;
+    min-width: 100px;
+}
+
+.link {
+    color: #8C433A;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 106px;
+
+    & h2 {
+        padding: 30px 0 20px 0;
+    }
+
+    & li {
+        row-gap: 3px;
+        font-family: DM Sans, sans-serif;
+        font-size: 21px;
+        line-height: 200%;
+
+        -moz-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+
+    & li:hover {
+        transform: translateX(3px);
+        color: #8c4d47;
+    }
+}
+
+.social {
+    display: flex;
+    max-height: 100px;
+    flex-direction: row;
+    column-gap: 35px;
+    padding-top: 35px;
+}
+
+.icon {
+    color: #8C433A;
+    font-size: 25px;
+    align-items: center;
+
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.icon:hover {
+    color: #8c4d47;
+    transform: scale(1.2);
+
+    .icon-bg {
+        transform: scale(1.2);
+    }
 }
