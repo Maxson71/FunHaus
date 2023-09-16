@@ -219,7 +219,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 82vh;
+    height: calc(100vh - 157px);
     max-height: 1080px;
     padding-bottom: 157px;
 
@@ -241,17 +241,30 @@ h2 {
 
 .main-info {
     display: flex;
-    justify-content: flex-end;
     padding-bottom: 7.5%;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    justify-content: space-between;
+}
 
-    & div {
-        max-width: 620px;
-        justify-content: flex-start;
+.info {
+    max-width: 620px;
+    justify-content: flex-start;
 
-        & p {
-            padding-top: 5.5%;
-        }
+    & p {
+        padding-top: 5.5%;
     }
+}
+
+.video-info {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 10;
 }
 
 /*==================================================================*/
@@ -362,6 +375,21 @@ h2 {
     transition: all .5s ease;
 }
 
+/*==================================================================*/
+.sub-info {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    & h2 {
+        max-width: 860px;
+    }
+
+    & p {
+        max-width: 620px;
+        padding-top: 40px;
+    }
+}
+
 
 /*==================================================================*/
 
@@ -382,10 +410,11 @@ h2 {
 .footer-head {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer_space {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     min-width: 100px;
 }
 
@@ -394,18 +423,16 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    flex-wrap: wrap;
     column-gap: 106px;
 
     & h2 {
         padding: 30px 0 20px 0;
     }
 
-    & li {
-        row-gap: 3px;
+    & li {;
         font-family: DM Sans, sans-serif;
         font-size: 21px;
-        line-height: 200%;
+        padding-top: 15px;
 
         -moz-transition: all .2s ease;
         -o-transition: all .2s ease;
@@ -444,5 +471,14 @@ h2 {
 
     .icon-bg {
         transform: scale(1.2);
+    }
+}
+
+/*==================================================================*/
+
+@media (max-width: 991.98px) {
+    .main-title {
+        height: 460px;
+        padding-bottom: 50px;
     }
 }
