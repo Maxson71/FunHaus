@@ -49,7 +49,26 @@ h2 {
 
 .p3 {
     font-size: 16px;
+}
+
+.dark-text {
     color: #8C433A;
+}
+
+/*==================================================================*/
+
+::-webkit-scrollbar {
+    width: 15px
+}
+
+::-webkit-scrollbar-track {
+    background-color: #652f29;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8C433A;
+    border: 3px solid #652f29;
+    border-radius: 6px;
 }
 
 /*==================================================================*/
@@ -390,9 +409,126 @@ h2 {
     }
 }
 
+/*==================================================================*/
+
+.main-image {
+    width: 100%;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.image-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 65px 10.5%;
+    row-gap: 5%;
+
+    & p {
+        position: relative;
+        padding-top: 25px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    & p::before {
+        position: absolute;
+        content: " ";
+        top: 16px;
+        width: 35px;
+        height: 1px;
+        background-color: #FDF4B8;
+    }
+
+    & h2 {
+        padding-left: 25px;
+        max-width: 820px;
+    }
+}
 
 /*==================================================================*/
 
+.scroll-images {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & ul {
+        display: flex;
+        padding: 0;
+        word-wrap: break-word;
+    }
+
+    & li {
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
+    & img {
+        max-width: 572px;
+        padding-bottom: 30px;
+    }
+
+    & p {
+        position: relative;
+        max-width: 300px;
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+
+    & p::before {
+        position: absolute;
+        content: " ";
+        top: 16px;
+        width: 35px;
+        height: 1px;
+        background-color: #FDF4B8;
+    }
+}
+
+.scroll-buttons {
+    transform: translateY(-400px);
+
+    & .scroll-button {
+        cursor: pointer;
+        position: relative;
+        background-color: #FDF4B8;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        & p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+
+            color: #8C433A;
+        }
+
+    }
+}
+
+.scroll-images-left {
+
+}
+
+.scroll-images-right {
+
+}
+
+/*==================================================================*/
 .footer {
     background-color: #FDF4B8;
     min-height: 690px;
