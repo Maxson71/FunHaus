@@ -1,12 +1,23 @@
+"use strict"
+new Swiper('.image-slider', {
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next'
+    },
+
+    slidesPerView: 2.1,
+    watchOverflow: true,
+});
+
 function toggleClass(element, className) {
     if (!element || !className) {
         return;
     }
 
-    var classString = element.className;
+    let classString = element.className;
 
     if (classString) {
-        var nameIndex = classString.indexOf(className);
+        let nameIndex = classString.indexOf(className);
 
         if (nameIndex === -1) {
             classString += ' ' + className;
@@ -21,13 +32,13 @@ function toggleClass(element, className) {
 }
 
 function closeAllQuestions() {
-    var openQuestions = document.getElementsByClassName("open-questions");
+    let openQuestions = document.getElementsByClassName("open-questions");
 
     while (openQuestions.length > 0) {
         toggleClass(openQuestions[0], "open-questions");
     }
 
-    var openParagraphQuestions = document.getElementsByClassName("open-paragraph-questions");
+    let openParagraphQuestions = document.getElementsByClassName("open-paragraph-questions");
 
     while (openParagraphQuestions.length > 0) {
         toggleClass(openParagraphQuestions[0], "open-paragraph-questions");
@@ -40,7 +51,7 @@ document.getElementById('btn-menu-responsive').addEventListener('click', functio
 
 document.getElementById('what-questions').addEventListener('click', function () {
     // Перевірка, чи елемент вже має клас "open-questions"
-    var isOpen = this.classList.contains("open-questions");
+    let isOpen = this.classList.contains("open-questions");
 
     closeAllQuestions();
 
@@ -52,7 +63,7 @@ document.getElementById('what-questions').addEventListener('click', function () 
 });
 
 document.getElementById('how-questions').addEventListener('click', function () {
-    var isOpen = this.classList.contains("open-questions");
+    let isOpen = this.classList.contains("open-questions");
 
     closeAllQuestions();
 
@@ -63,7 +74,7 @@ document.getElementById('how-questions').addEventListener('click', function () {
 });
 
 document.getElementById('where-questions').addEventListener('click', function () {
-    var isOpen = this.classList.contains("open-questions");
+    let isOpen = this.classList.contains("open-questions");
 
     closeAllQuestions();
 
@@ -74,7 +85,7 @@ document.getElementById('where-questions').addEventListener('click', function ()
 });
 
 document.getElementById('when-questions').addEventListener('click', function () {
-    var isOpen = this.classList.contains("open-questions");
+    let isOpen = this.classList.contains("open-questions");
 
     closeAllQuestions();
 

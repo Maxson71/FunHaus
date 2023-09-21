@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Playfair+Display&family=Montserrat:wght@400;700&display=swap"
           rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+          rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/icons.css">
     <title>FunHauS</title>
@@ -42,7 +45,7 @@
             <div class="video-info">
                 <iframe class="video"
                         src="https://www.youtube.com/embed/krDWc30PAGg?si=TZJ7Ld0PAcIL-5rd"
-                        title="YouTube video player"
+                        title="YouTube"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                 </iframe>
@@ -184,51 +187,51 @@
                 </h2>
             </div>
         </div>
-        <div class="scroll-images">
-            <ul>
-                <li>
-                    <img src="/img/img1.svg" alt="" id="img1">
-                    <p class="p2">
-                        Lorem ipsum dolor sit amet, consectetur adipisc.
-                    </p>
-                </li>
-                <li>
-                    <img src="/img/img2.svg" alt="" id="img2">
-                    <p class="p2">
-                        Lorem ipsum dolor sit amet, consectetur adipisc.
-                    </p>
-                </li>
-                <li>
-                    <img src="/img/img1.svg" alt="" id="img3">
-                    <p class="p2">
-                        Lorem ipsum dolor sit amet, consectetur adipisc.
-                    </p>
-                </li>
-                <li>
-                    <img src="/img/img2.svg" alt="" id="img4">
-                    <p class="p2">
-                        Lorem ipsum dolor sit amet, consectetur adipisc.
-                    </p>
-                </li>
-                <li>
-                    <img src="/img/img1.svg" alt="" id="img5">
-                    <p class="p2">
-                        Lorem ipsum dolor sit amet, consectetur adipisc.
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <div class="scroll-buttons">
-            <div class="scroll-images-left scroll-button">
-                <p class="p1">
-                    <
-                </p>
+        <div class="image-slider swiper">
+            <div class="image-slider__wrapper swiper-wrapper">
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="/img/img1.svg" alt="">
+                        <p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipisc.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="/img/img2.svg" alt="">
+                        <p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipisc.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="/img/img1.svg" alt="">
+                        <p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipisc.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="/img/img2.svg" alt="">
+                        <p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipisc.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="/img/img1.svg" alt="">
+                        <p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipisc.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="scroll-images-right scroll-button">
-                <p class="p1">
-                    >
-                </p>
-            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
 
     </main>
@@ -282,6 +285,7 @@
         </div>
     </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
