@@ -4,9 +4,9 @@ new Swiper('.image-slider', {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next'
     },
-
-    slidesPerView: 2.1,
     watchOverflow: true,
+    spaceBetween: 32,
+    slidesPerView: 'auto',
 });
 
 function toggleClass(element, className) {
